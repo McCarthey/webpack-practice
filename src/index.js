@@ -1,20 +1,15 @@
 import _ from 'lodash'
-import './style.css'
-import Icon from './my-image.jpg'
-import Data from './data.xml'
+import printMe from './print'
 
 function component() {
     let element = document.createElement('div')
+    let btn = document.createElement('button')
 
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ')
-    element.classList.add('hello')
+    btn.innerHTML = 'Click here, and check your console'
+    btn.onclick = printMe
+
+    element.appendChild(btn)
     
-    let myIcon = new Image()
-    myIcon.src = Icon
-
-    element.appendChild(myIcon)
-    console.log(Data)
-
     return element
 }
 
