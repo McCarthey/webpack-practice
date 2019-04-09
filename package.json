@@ -20,6 +20,7 @@
   "homepage": "https://github.com/McCarthey/webpack-practice#readme",
   "dependencies": {
     "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
     "lodash": "^4.17.11",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.6",
