@@ -1,26 +1,23 @@
-import _ from 'lodash'
-import printMe from './print'
+import _ from "lodash";
 
 function component() {
-    let element = document.createElement('div')
-    let btn = document.createElement('button')
+    var element = document.createElement("div");
+    var button = document.createElement("button");
+    var br = document.createElement("br");
 
-    btn.innerHTML = `Hello webpack`
-    btn.onclick = printMe
+    button.innerHTML = "Click me and look at the console";
+    element.innerHTML = _.join(["Hello", "webpack"], " ");
+    element.appendChild(br);
+    element.appendChild(button);
 
-    element.appendChild(btn)
-    
-    return element
+    button.onclick = e =>
+        import(/* webpackChunkName: "print" */ "./print").then(module => {
+            var print = module.default;
+
+            print();
+        });
+
+    return element;
 }
 
-let element = component() // 存储element,以便在print.js修改时重新渲染
-document.body.appendChild(element)
-
-if(module.hot) {
-    module.hot.accept('./print.js', function() {
-        console.log('Accepting the update printMe module!')
-        document.body.removeChild(element)
-        element = component()
-        document.body.appendChild(element)
-    })
-}
+document.body.appendChild(component())
