@@ -1,4 +1,5 @@
 import _ from "lodash";
+import Print from './print'
 
 function component() {
     var element = document.createElement("div");
@@ -10,14 +11,9 @@ function component() {
     element.appendChild(br);
     element.appendChild(button);
 
-    button.onclick = e =>
-        import(/* webpackChunkName: "print" */ "./print").then(module => {
-            var print = module.default;
+    button.onclick = Print.bind(null, 'Hello webpack modify!')
 
-            print();
-        });
-
-    return element;
+    return element
 }
 
 document.body.appendChild(component())
