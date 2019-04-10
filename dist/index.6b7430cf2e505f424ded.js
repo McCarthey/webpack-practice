@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{tjUo:function(e,n,o){"use strict";o.r(n);var t,c,l,d=o("LvDl"),i=o.n(d);document.body.appendChild((t=document.createElement("div"),c=document.createElement("button"),l=document.createElement("br"),c.innerHTML="Click me and look at the console",t.innerHTML=i.a.join(["Hello","webpack"]," "),t.appendChild(l),t.appendChild(c),c.onclick=function(e){console.log(e)}.bind(null,"Hello webpack modify!"),t))}},[["tjUo",1,2]]]);
-//# sourceMappingURL=index.6b7430cf2e505f424ded.js.map

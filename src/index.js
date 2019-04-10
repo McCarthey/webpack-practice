@@ -1,5 +1,5 @@
 import _ from "lodash";
-import Print from './print'
+import Print from "./print";
 
 function component() {
     var element = document.createElement("div");
@@ -11,9 +11,22 @@ function component() {
     element.appendChild(br);
     element.appendChild(button);
 
-    button.onclick = Print.bind(null, 'Hello webpack modify!')
+    button.onclick = Print.bind(null, "Hello webpack modify!");
 
-    return element
+    return element;
 }
 
-document.body.appendChild(component())
+document.body.appendChild(component());
+
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker
+            .register("service-worker.js")
+            .then(registration => {
+                console.log("SW registration: ", registration);
+            })
+            .catch(err => {
+                console.log("SW registered failed", err);
+            });
+    });
+}
