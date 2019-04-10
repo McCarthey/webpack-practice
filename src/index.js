@@ -1,6 +1,5 @@
 import _ from 'lodash'
 import printMe from './print'
-import './style.css'
 import {cube} from './math'
 
 function component() {
