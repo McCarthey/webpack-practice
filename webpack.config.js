@@ -4,7 +4,6 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const webpack = require("webpack");
 
 module.exports = {
-    mode: "development",
     entry: {
         app: "./src/index.js"
     },
@@ -13,6 +12,7 @@ module.exports = {
         contentBase: "./dist",
         hot: true
     },
+    mode: "production",
     module: {
         rules: [
             {
@@ -31,6 +31,6 @@ module.exports = {
     output: {
         filename: "[name].bundle.js", // 根据入口名动态的生成bundle名
         path: path.resolve(__dirname, "dist"),
-        publicPath: "/"
+        // publicPath: "/"
     }
 };

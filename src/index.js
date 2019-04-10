@@ -1,12 +1,13 @@
 import _ from 'lodash'
 import printMe from './print'
 import './style.css'
+import {cube} from './math'
 
 function component() {
     let element = document.createElement('div')
     let btn = document.createElement('button')
 
-    btn.innerHTML = 'Click here, and check your console'
+    btn.innerHTML = `5 cubed is equal to ${cube(5)}`
     btn.onclick = printMe
 
     element.appendChild(btn)
