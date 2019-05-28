@@ -1,9 +1,14 @@
 const path = require("path");
 
+
 module.exports = {
-    entry: "./src/index.ts",
+    mode: 'development',
+    entry: {
+        index: "./src/index.js",
+    },
     output: {
-        filename: "bundle.js",
+        filename: "[name].bundle.js",
+        chunkFilename: "[name].bundle.js",
         path: path.resolve(__dirname, "dist")
     },
     devtool: "inline-source-map",
@@ -39,8 +44,4 @@ module.exports = {
     resolve: {
         extensions: [".tsx", ".ts", ".js"]
     },
-    output: {
-        filename: "bundle.js",
-        path: path.resolve(__dirname, "dist")
-    }
 };
